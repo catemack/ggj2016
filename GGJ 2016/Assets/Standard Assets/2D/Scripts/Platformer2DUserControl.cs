@@ -31,10 +31,12 @@ namespace UnityStandardAssets._2D
         {
             // Read the inputs.
             bool crouch = Input.GetKey(KeyCode.S);
-
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
+            float xPos = m_Character.transform.position.x;
+            float cameraLeftBound = Camera.main.rect.x;
 
-            if (h < 0) h = 0.5f;
+            if (xPos < cameraLeftBound) h = 1.0f;
+            else if (h < 0) h = 0.5f;
             else if (h > 0) h = 1.5f;
             else h = 1.0f;
                 

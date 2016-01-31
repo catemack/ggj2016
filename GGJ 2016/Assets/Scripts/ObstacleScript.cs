@@ -8,7 +8,8 @@ public class ObstacleScript : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            Debug.Break();
+            //Debug.Break();
+            Application.Quit();
         }
     }
 }
